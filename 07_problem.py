@@ -6,6 +6,29 @@ import unittest
 
 
 def decode_from_dict(dictionary):
+    string = ""
+    length = 0
+    for value in dictionary.values():
+        length += len(value[0])
+    ##Creating temporary list
+    temp_list = [0] * length
+    ###Created temporary List
+    present = 1
+    for k in dictionary.keys():
+        ##Getting a characte from the key
+        letter = chr(k)
+        ##Getting values of the key
+        dict_value = dictionary[k]
+        ##Checking the number of occurance of a character
+        if temp_list.count(letter) < dict_value[1]:
+            ##GETTING THE INDEX VALUE TO BE PLACED FROM VALUE
+            for index in dict_value[0]:
+                ##REPLACING THE 0 WITH CHARACTER THAT WE GOT FROM KEY (line 15)
+                temp_list[index] = letter
+    ##Merging items in "temp_list" into a string
+    for character in temp_list:
+        string += character
+    return (string)
     #write your code here
 
 

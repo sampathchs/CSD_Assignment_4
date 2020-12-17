@@ -47,7 +47,7 @@ class LinkedList:
 def create_from_dict(data):
     """Create Linked List From Dictionary"""
 
-    new_linked_list = LinkedList(int(data["val"]))
+    new_linked_list = LinkedList(data["val"])
 
     if data.get("next") is not None:
         new_linked_list.next = create_from_dict(data["next"])
@@ -58,8 +58,8 @@ def create_from_dict(data):
 def create_from_string(root_str):
     """Create Linked List From String"""
 
-    root_dict = root_str.replace(' ', '').replace(',next:None', '').replace(
-        'val:', '"val":').replace('next:', '"next":')
+    root_dict = root_str.replace(',next:None', '').replace(
+        'val:', '"val":').replace('next:', '"next":').replace("'",'"')
 
     data = json.loads(root_dict)
 

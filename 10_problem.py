@@ -58,6 +58,16 @@ def get_on_switches(node):
     ??? Write what needs to be done ???
     """
     pass
+    from math import log2
+    output_switches = []
+    while node:
+        n = int(log2(node.val))
+        if n in output_switches:
+            output_switches.remove(n)
+        else:
+            output_switches.append(n)
+        node = node.next
+    return sorted(output_switches)
 
 
 class TestGetOnSwitches(unittest.TestCase):

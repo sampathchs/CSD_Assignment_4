@@ -22,7 +22,19 @@ import unittest
 
 
 def narcissistic_number(n):
-    #write your code here
+    output = []
+    for number in range(n):
+        sum = 0
+        length = len(str(number))
+        for digit in str(number):
+            sum = sum + int(digit) ** length
+            if sum == number:
+                output.append(number)
+    output1 = []
+    for i in output:
+        if i not in output1:
+            output1.append(i)
+    return output1
 
 
 class NarcissisticNumber(unittest.TestCase):

@@ -17,8 +17,16 @@ Example:
 
 import unittest
 
-
+def solve(s):
+    ans = 0
+    for c in map(int, s):
+        ans = 3 * ans + c
+    return ans
 def decode_base_three(nums):
+    output=[]
+    for item in nums:
+        output.append(solve(item))
+    return output
 
     #write your code here
 

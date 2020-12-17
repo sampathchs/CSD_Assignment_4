@@ -30,6 +30,14 @@ def search_linked_list(node, sk):
     ??? Write what needs to be done ???
     """
     pass
+    init=node
+    count=1
+    while init:
+        if init.val==sk:
+            break
+        count+=1
+        init=init.next
+    return count
 
 
 class TestSearchLinkedList(unittest.TestCase):

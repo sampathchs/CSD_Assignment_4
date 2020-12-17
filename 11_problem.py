@@ -22,6 +22,21 @@ def del_node(node, delnum):
     ??? Write what needs to be done ???
     """
     pass
+    init=node
+    start_index=init.next
+    list=[]
+    while init:
+        list.append(init.val)
+        init=init.next
+    if delnum==list[0]:
+        return node.next
+    else:
+        while start_index:
+            if start_index.next.val==delnum:
+                break
+            start_index=start_index.next
+        start_index.next=start_index.next.next
+        return node
 
 
 # DO NOT TOUCH THE BELOW CODE

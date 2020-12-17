@@ -16,9 +16,16 @@ d= {99 : [[0,2], 2], 111 : [[1,3], 2] }
 """
 import unittest
 
-
+def letter_index(s, ch):
+    return [i for i, ltr in enumerate(s) if ltr == ch]
 def encoding_to_dict(s):
     #write your code here
+    dictionary = {}
+    for char in s:
+        index_list = letter_index(s, char)
+        count_char = s.count(char)
+        dictionary[ord(char)] = [index_list, count_char]
+    return dictionary
 
 
 class TestEncodeToDict(unittest.TestCase):

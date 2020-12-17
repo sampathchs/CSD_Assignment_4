@@ -25,7 +25,13 @@ import unittest
 
 
 def winning_Bosses(fighters, bosses):
-    # Write your code here
+    bosses_dup = bosses
+    bosses=[]
+    for boss_matrix in bosses_dup:
+        if boss_matrix.count(1) >= fighters.count(1):
+            bosses.append(boss_matrix)
+
+    return bosses_dup
     
 
 

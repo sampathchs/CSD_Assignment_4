@@ -31,6 +31,16 @@ import math
 
 
 def add_maxdigit(nums):
+    digit_length = []
+    for num in nums:
+        number_legth = len(str(num))
+        digit_length.append(number_legth)
+    maximum_length = max(digit_length)
+    sum = 0
+    for i in nums:
+        if len(str(i)) >= maximum_length:
+            sum += i
+    return sum
     
 
 # DO NOT TOUCH THE BELOW CODE

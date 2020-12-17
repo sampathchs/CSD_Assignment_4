@@ -75,6 +75,20 @@ def llcreation(ll, num):
 
 
 def get_on_switches(link):
+    link_list = list(map(int, link.split('->')))
+    output_switches = []
+    for link in link_list:
+        link = int(math.log2(link))
+        for i in range(len(output_switches)):
+            if link == output_switches[i]:
+                output_switches.pop(i)
+                break
+            elif link < output_switches[i]:
+                output_switches.insert(i, link)
+                break
+        else:
+            output_switches.append(link)
+    return output_switches
     
 
 

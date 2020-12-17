@@ -38,6 +38,16 @@ def sorted_linked_list(node):
     ??? Write what needs to be done ???
     """
     pass
+    head = node
+    lst = []
+    while node:
+        lst.append(node.val)
+        node = node.next
+    node = head
+    for s in sorted(lst):
+        node.val = s
+        node = node.next
+    return head
 
 
 class TestSortingLinkedList(unittest.TestCase):
